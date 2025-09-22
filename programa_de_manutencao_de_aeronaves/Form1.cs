@@ -102,5 +102,37 @@ namespace programa_de_manutencao_de_aeronaves
             dataGridView1.DataSource = dt;
             con.Close();
         }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(materialTextBox21.Text) || string.IsNullOrWhiteSpace(materialComboBox2.Text))
+            {
+               MaterialMessageBox.Show("Por favor, insira a matrícula da aeronave.");
+            }
+            else
+            {
+                try
+                {
+                    string conexao = "server=localhost;database=aereo_db;uid=root;pwd=;";
+                    MySqlConnection con = new MySqlConnection(conexao);
+                    con.Open();
+                    string query = "INSERT INTO aeronaves (matricula_aeronave, frota_aeronave) VALUES (@matricula_aeronave, @frota_aeronave)";
+                    MySqlCommand cmd = new MySqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@matricula_aeronave", materialTextBox21.Text);
+                    cmd.Parameters.AddWithValue("@frota_aeronave", materialComboBox2.Text);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    pegar_dados_aeronaves();
+                    materialTextBox21.Clear();
+                    materialComboBox2.SelectedIndex = -1;
+                    MaterialMessageBox.Show("Aeronave cadastrada com sucesso!");
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+
+        }
     }
 }
