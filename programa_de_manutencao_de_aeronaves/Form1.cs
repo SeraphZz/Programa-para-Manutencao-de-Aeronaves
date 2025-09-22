@@ -21,7 +21,7 @@ namespace programa_de_manutencao_de_aeronaves
             materialSkinManager.EnforceBackcolorOnAllComponents = false;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Pink400, Primary.Pink500, Primary.Pink600, Accent.Pink700, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange600, Primary.DeepOrange900, Primary.DeepOrange300, Accent.DeepOrange400, TextShade.WHITE);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -75,5 +75,32 @@ namespace programa_de_manutencao_de_aeronaves
 
         }
 
+        private void materialMaskedTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            string conexao = "server=localhost;database=aereo_db;uid=root;pwd=;";
+            MySqlConnection con = new MySqlConnection(conexao);
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            DataTable dt = new DataTable();
+            con.Open();
+            da = new MySqlDataAdapter("SELECT * FROM aeronaves WHERE matricula_aeronave LIKE '" + materialMaskedTextBox1.Text + "%'", con);
+            dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close(); 
+        }
+
+        private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string conexao = "server=localhost;database=aereo_db;uid=root;pwd=;";
+            MySqlConnection con = new MySqlConnection(conexao);
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            DataTable dt = new DataTable();
+            con.Open();
+            da = new MySqlDataAdapter("SELECT * FROM aeronaves WHERE frota_aeronave LIKE '" + materialComboBox1.Text + "%'", con);
+            dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close();
+        }
     }
 }
