@@ -30,9 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
-            this.mySqlCommandBuilder1 = new MySqlConnector.MySqlCommandBuilder();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
@@ -42,6 +41,9 @@
             this.materialMaskedTextBox1 = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.inseriraeronave = new MaterialSkin.Controls.MaterialButton();
+            this.frota_combo = new MaterialSkin.Controls.MaterialComboBox();
+            this.matricula_txt = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl3 = new MaterialSkin.Controls.MaterialTabControl();
@@ -55,11 +57,16 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialComboBox2 = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.mySqlCommandBuilder1 = new MySqlConnector.MySqlCommandBuilder();
+            this.mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
+            this.cond_combo = new MaterialSkin.Controls.MaterialComboBox();
+            this.pn_text = new MaterialSkin.Controls.MaterialTextBox();
+            this.sn_text = new MaterialSkin.Controls.MaterialTextBox();
+            this.part_desc = new MaterialSkin.Controls.MaterialMultiLineTextBox();
+            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialFloatingActionButton1 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -70,17 +77,12 @@
             this.materialTabControl3.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage7.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.materialTabControl4.SuspendLayout();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // mySqlCommandBuilder1
-            // 
-            this.mySqlCommandBuilder1.DataAdapter = null;
-            this.mySqlCommandBuilder1.QuotePrefix = "`";
-            this.mySqlCommandBuilder1.QuoteSuffix = "`";
             // 
             // materialTabControl1
             // 
@@ -138,6 +140,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.materialFloatingActionButton1);
             this.tabPage4.Controls.Add(this.materialComboBox1);
             this.tabPage4.Controls.Add(this.materialMaskedTextBox1);
             this.tabPage4.Controls.Add(this.dataGridView1);
@@ -169,7 +172,7 @@
             "H155",
             "AW139",
             "AW189"});
-            this.materialComboBox1.Location = new System.Drawing.Point(535, 18);
+            this.materialComboBox1.Location = new System.Drawing.Point(489, 17);
             this.materialComboBox1.MaxDropDownItems = 4;
             this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialComboBox1.Name = "materialComboBox1";
@@ -225,27 +228,25 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 85);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Location = new System.Drawing.Point(135, 83);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(806, 215);
+            this.dataGridView1.Size = new System.Drawing.Size(537, 215);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.materialLabel2);
-            this.tabPage5.Controls.Add(this.materialComboBox2);
-            this.tabPage5.Controls.Add(this.materialLabel1);
-            this.tabPage5.Controls.Add(this.materialTextBox21);
-            this.tabPage5.Controls.Add(this.materialButton1);
+            this.tabPage5.Controls.Add(this.inseriraeronave);
+            this.tabPage5.Controls.Add(this.frota_combo);
+            this.tabPage5.Controls.Add(this.matricula_txt);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -253,6 +254,83 @@
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Cadastro";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // inseriraeronave
+            // 
+            this.inseriraeronave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.inseriraeronave.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.inseriraeronave.Depth = 0;
+            this.inseriraeronave.HighEmphasis = true;
+            this.inseriraeronave.Icon = null;
+            this.inseriraeronave.Location = new System.Drawing.Point(320, 261);
+            this.inseriraeronave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.inseriraeronave.MouseState = MaterialSkin.MouseState.HOVER;
+            this.inseriraeronave.Name = "inseriraeronave";
+            this.inseriraeronave.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.inseriraeronave.Size = new System.Drawing.Size(76, 36);
+            this.inseriraeronave.TabIndex = 2;
+            this.inseriraeronave.Text = "Inserir";
+            this.inseriraeronave.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.inseriraeronave.UseAccentColor = false;
+            this.inseriraeronave.UseVisualStyleBackColor = true;
+            this.inseriraeronave.Click += new System.EventHandler(this.materialButton1_Click);
+            // 
+            // frota_combo
+            // 
+            this.frota_combo.AutoResize = false;
+            this.frota_combo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.frota_combo.Depth = 0;
+            this.frota_combo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.frota_combo.DropDownHeight = 174;
+            this.frota_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.frota_combo.DropDownWidth = 121;
+            this.frota_combo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.frota_combo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.frota_combo.FormattingEnabled = true;
+            this.frota_combo.IntegralHeight = false;
+            this.frota_combo.ItemHeight = 43;
+            this.frota_combo.Items.AddRange(new object[] {
+            "S76",
+            "H135",
+            "H155",
+            "AW139",
+            "AW189"});
+            this.frota_combo.Location = new System.Drawing.Point(584, 92);
+            this.frota_combo.MaxDropDownItems = 4;
+            this.frota_combo.MouseState = MaterialSkin.MouseState.OUT;
+            this.frota_combo.Name = "frota_combo";
+            this.frota_combo.Size = new System.Drawing.Size(238, 49);
+            this.frota_combo.StartIndex = 0;
+            this.frota_combo.TabIndex = 1;
+            // 
+            // matricula_txt
+            // 
+            this.matricula_txt.AnimateReadOnly = false;
+            this.matricula_txt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.matricula_txt.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.matricula_txt.Depth = 0;
+            this.matricula_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.matricula_txt.HideSelection = true;
+            this.matricula_txt.Hint = "Matrícula da Aeronave";
+            this.matricula_txt.LeadingIcon = null;
+            this.matricula_txt.Location = new System.Drawing.Point(6, 93);
+            this.matricula_txt.MaxLength = 32767;
+            this.matricula_txt.MouseState = MaterialSkin.MouseState.OUT;
+            this.matricula_txt.Name = "matricula_txt";
+            this.matricula_txt.PasswordChar = '\0';
+            this.matricula_txt.PrefixSuffixText = null;
+            this.matricula_txt.ReadOnly = false;
+            this.matricula_txt.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.matricula_txt.SelectedText = "";
+            this.matricula_txt.SelectionLength = 0;
+            this.matricula_txt.SelectionStart = 0;
+            this.matricula_txt.ShortcutsEnabled = true;
+            this.matricula_txt.Size = new System.Drawing.Size(250, 48);
+            this.matricula_txt.TabIndex = 0;
+            this.matricula_txt.TabStop = false;
+            this.matricula_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.matricula_txt.TrailingIcon = null;
+            this.matricula_txt.UseSystemPasswordChar = false;
             // 
             // tabPage2
             // 
@@ -295,6 +373,8 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.materialTextBox2);
+            this.tabPage6.Controls.Add(this.materialTextBox1);
             this.tabPage6.Controls.Add(this.dataGridView2);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
@@ -307,13 +387,26 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(11, 38);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.Location = new System.Drawing.Point(135, 83);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(806, 242);
+            this.dataGridView2.Size = new System.Drawing.Size(537, 215);
             this.dataGridView2.TabIndex = 1;
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.materialButton2);
+            this.tabPage7.Controls.Add(this.part_desc);
+            this.tabPage7.Controls.Add(this.sn_text);
+            this.tabPage7.Controls.Add(this.pn_text);
+            this.tabPage7.Controls.Add(this.cond_combo);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
@@ -398,105 +491,162 @@
             this.imageList1.Images.SetKeyName(1, "ferramentas.png");
             this.imageList1.Images.SetKeyName(2, "motor.png");
             // 
-            // materialButton1
+            // mySqlCommandBuilder1
             // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(352, 271);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(76, 36);
-            this.materialButton1.TabIndex = 0;
-            this.materialButton1.Text = "Inserir";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            this.mySqlCommandBuilder1.DataAdapter = null;
+            this.mySqlCommandBuilder1.QuotePrefix = "`";
+            this.mySqlCommandBuilder1.QuoteSuffix = "`";
             // 
-            // materialTextBox21
+            // cond_combo
             // 
-            this.materialTextBox21.AnimateReadOnly = false;
-            this.materialTextBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox21.Depth = 0;
-            this.materialTextBox21.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox21.HideSelection = true;
-            this.materialTextBox21.LeadingIcon = null;
-            this.materialTextBox21.Location = new System.Drawing.Point(6, 78);
-            this.materialTextBox21.MaxLength = 32767;
-            this.materialTextBox21.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox21.Name = "materialTextBox21";
-            this.materialTextBox21.PasswordChar = '\0';
-            this.materialTextBox21.PrefixSuffixText = null;
-            this.materialTextBox21.ReadOnly = false;
-            this.materialTextBox21.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox21.SelectedText = "";
-            this.materialTextBox21.SelectionLength = 0;
-            this.materialTextBox21.SelectionStart = 0;
-            this.materialTextBox21.ShortcutsEnabled = true;
-            this.materialTextBox21.Size = new System.Drawing.Size(250, 48);
-            this.materialTextBox21.TabIndex = 1;
-            this.materialTextBox21.TabStop = false;
-            this.materialTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox21.TrailingIcon = null;
-            this.materialTextBox21.UseSystemPasswordChar = false;
+            this.cond_combo.AutoResize = false;
+            this.cond_combo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cond_combo.Depth = 0;
+            this.cond_combo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cond_combo.DropDownHeight = 174;
+            this.cond_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cond_combo.DropDownWidth = 121;
+            this.cond_combo.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cond_combo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cond_combo.FormattingEnabled = true;
+            this.cond_combo.Hint = "Condition";
+            this.cond_combo.IntegralHeight = false;
+            this.cond_combo.ItemHeight = 43;
+            this.cond_combo.Items.AddRange(new object[] {
+            "Inspected",
+            "New",
+            "Overhaul"});
+            this.cond_combo.Location = new System.Drawing.Point(574, 185);
+            this.cond_combo.MaxDropDownItems = 4;
+            this.cond_combo.MouseState = MaterialSkin.MouseState.OUT;
+            this.cond_combo.Name = "cond_combo";
+            this.cond_combo.Size = new System.Drawing.Size(235, 49);
+            this.cond_combo.StartIndex = 0;
+            this.cond_combo.TabIndex = 0;
             // 
-            // materialLabel1
+            // pn_text
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(6, 56);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(160, 19);
-            this.materialLabel1.TabIndex = 2;
-            this.materialLabel1.Text = "Matrícula da Aeronave";
+            this.pn_text.AnimateReadOnly = false;
+            this.pn_text.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pn_text.Depth = 0;
+            this.pn_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.pn_text.Hint = "Part Number";
+            this.pn_text.LeadingIcon = null;
+            this.pn_text.Location = new System.Drawing.Point(23, 184);
+            this.pn_text.MaxLength = 40;
+            this.pn_text.MouseState = MaterialSkin.MouseState.OUT;
+            this.pn_text.Multiline = false;
+            this.pn_text.Name = "pn_text";
+            this.pn_text.Size = new System.Drawing.Size(238, 50);
+            this.pn_text.TabIndex = 2;
+            this.pn_text.Text = "";
+            this.pn_text.TrailingIcon = null;
             // 
-            // materialComboBox2
+            // sn_text
             // 
-            this.materialComboBox2.AutoResize = false;
-            this.materialComboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox2.Depth = 0;
-            this.materialComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox2.DropDownHeight = 174;
-            this.materialComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox2.DropDownWidth = 121;
-            this.materialComboBox2.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox2.FormattingEnabled = true;
-            this.materialComboBox2.IntegralHeight = false;
-            this.materialComboBox2.ItemHeight = 43;
-            this.materialComboBox2.Items.AddRange(new object[] {
-            "S76",
-            "H135",
-            "H155",
-            "AW139",
-            "AW189"});
-            this.materialComboBox2.Location = new System.Drawing.Point(571, 77);
-            this.materialComboBox2.MaxDropDownItems = 4;
-            this.materialComboBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox2.Name = "materialComboBox2";
-            this.materialComboBox2.Size = new System.Drawing.Size(251, 49);
-            this.materialComboBox2.StartIndex = 0;
-            this.materialComboBox2.TabIndex = 3;
+            this.sn_text.AnimateReadOnly = false;
+            this.sn_text.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.sn_text.Depth = 0;
+            this.sn_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.sn_text.Hint = "Serial Number";
+            this.sn_text.LeadingIcon = null;
+            this.sn_text.Location = new System.Drawing.Point(290, 184);
+            this.sn_text.MaxLength = 40;
+            this.sn_text.MouseState = MaterialSkin.MouseState.OUT;
+            this.sn_text.Multiline = false;
+            this.sn_text.Name = "sn_text";
+            this.sn_text.Size = new System.Drawing.Size(238, 50);
+            this.sn_text.TabIndex = 3;
+            this.sn_text.Text = "";
+            this.sn_text.TrailingIcon = null;
             // 
-            // materialLabel2
+            // part_desc
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(572, 56);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(130, 19);
-            this.materialLabel2.TabIndex = 4;
-            this.materialLabel2.Text = "Frota da Aeronave";
+            this.part_desc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.part_desc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.part_desc.Depth = 0;
+            this.part_desc.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.part_desc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.part_desc.Hint = "Part Description";
+            this.part_desc.Location = new System.Drawing.Point(23, 43);
+            this.part_desc.MaxLength = 40;
+            this.part_desc.MouseState = MaterialSkin.MouseState.HOVER;
+            this.part_desc.Name = "part_desc";
+            this.part_desc.Size = new System.Drawing.Size(238, 111);
+            this.part_desc.TabIndex = 4;
+            this.part_desc.Text = "";
+            // 
+            // materialButton2
+            // 
+            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton2.Depth = 0;
+            this.materialButton2.HighEmphasis = true;
+            this.materialButton2.Icon = null;
+            this.materialButton2.Location = new System.Drawing.Point(374, 274);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton2.Name = "materialButton2";
+            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton2.Size = new System.Drawing.Size(76, 36);
+            this.materialButton2.TabIndex = 5;
+            this.materialButton2.Text = "Inserir";
+            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton2.UseAccentColor = false;
+            this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
+            // 
+            // materialTextBox1
+            // 
+            this.materialTextBox1.AnimateReadOnly = false;
+            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox1.Depth = 0;
+            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox1.Hint = "Part Number";
+            this.materialTextBox1.LeadingIcon = null;
+            this.materialTextBox1.Location = new System.Drawing.Point(10, 18);
+            this.materialTextBox1.MaxLength = 50;
+            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox1.Multiline = false;
+            this.materialTextBox1.Name = "materialTextBox1";
+            this.materialTextBox1.Size = new System.Drawing.Size(278, 50);
+            this.materialTextBox1.TabIndex = 2;
+            this.materialTextBox1.Text = "";
+            this.materialTextBox1.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("materialTextBox1.TrailingIcon")));
+            this.materialTextBox1.TextChanged += new System.EventHandler(this.materialTextBox1_TextChanged);
+            // 
+            // materialTextBox2
+            // 
+            this.materialTextBox2.AnimateReadOnly = false;
+            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox2.Depth = 0;
+            this.materialTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox2.Hint = "Serial Number";
+            this.materialTextBox2.LeadingIcon = null;
+            this.materialTextBox2.Location = new System.Drawing.Point(489, 17);
+            this.materialTextBox2.MaxLength = 50;
+            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox2.Multiline = false;
+            this.materialTextBox2.Name = "materialTextBox2";
+            this.materialTextBox2.Size = new System.Drawing.Size(278, 50);
+            this.materialTextBox2.TabIndex = 3;
+            this.materialTextBox2.Text = "";
+            this.materialTextBox2.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("materialTextBox2.TrailingIcon")));
+            this.materialTextBox2.TextChanged += new System.EventHandler(this.materialTextBox2_TextChanged);
+            // 
+            // materialFloatingActionButton1
+            // 
+            this.materialFloatingActionButton1.Depth = 0;
+            this.materialFloatingActionButton1.Icon = null;
+            this.materialFloatingActionButton1.Location = new System.Drawing.Point(751, 22);
+            this.materialFloatingActionButton1.Mini = true;
+            this.materialFloatingActionButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFloatingActionButton1.Name = "materialFloatingActionButton1";
+            this.materialFloatingActionButton1.Size = new System.Drawing.Size(40, 40);
+            this.materialFloatingActionButton1.TabIndex = 3;
+            this.materialFloatingActionButton1.Text = "materialFloatingActionButton1";
+            this.materialFloatingActionButton1.UseVisualStyleBackColor = true;
+            this.materialFloatingActionButton1.Click += new System.EventHandler(this.materialFloatingActionButton1_Click);
             // 
             // Form1
             // 
@@ -521,6 +671,8 @@
             this.materialTabControl3.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.materialTabControl4.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
@@ -530,9 +682,6 @@
         }
 
         #endregion
-
-        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
-        private MySqlConnector.MySqlCommandBuilder mySqlCommandBuilder1;
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -555,11 +704,19 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox1;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialButton inseriraeronave;
+        private MaterialSkin.Controls.MaterialComboBox frota_combo;
+        private MaterialSkin.Controls.MaterialTextBox2 matricula_txt;
+        private MySqlConnector.MySqlCommandBuilder mySqlCommandBuilder1;
+        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox part_desc;
+        private MaterialSkin.Controls.MaterialTextBox sn_text;
+        private MaterialSkin.Controls.MaterialTextBox pn_text;
+        private MaterialSkin.Controls.MaterialComboBox cond_combo;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton1;
     }
 }
 
