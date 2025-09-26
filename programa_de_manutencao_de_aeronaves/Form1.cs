@@ -77,13 +77,6 @@ namespace programa_de_manutencao_de_aeronaves
             DataTable dt = new DataTable();
             dt.Load(reader);
             dataGridView3.DataSource = dt;
-            dataGridView3.Columns["id_task"].HeaderText = "Código da Task";
-            dataGridView3.Columns["descricao_task"].HeaderText = "Descrição da Task";
-            dataGridView3.Columns["part_on"].HeaderText = "Part On";
-            dataGridView3.Columns["sn_on"].HeaderText = "S/N On";
-            dataGridView3.Columns["part_off"].HeaderText = "Part Off";
-            dataGridView3.Columns["sn_off"].HeaderText = "S/N Off";
-            dataGridView3.Columns["data"].HeaderText = "Data da Task";
         }
 
         private void materialMaskedTextBox1_TextChanged(object sender, EventArgs e)
@@ -211,56 +204,6 @@ namespace programa_de_manutencao_de_aeronaves
             con.Close();
         }
 
-        private void materialButton1_Click_1(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(ata_text.Text) || string.IsNullOrWhiteSpace(date_text.Text) || string.IsNullOrWhiteSpace(taskdesc.Text)) 
-            {
-                MaterialMessageBox.Show("Por favor, insira a ATA ou a data.");
-                return;
-            }
-            else
-            {
-                try
-                {
-                    string conexao = "server=localhost;database=aereo_db;uid=root;pwd=;";
-                    MySqlConnection con = new MySqlConnection(conexao);
-                    con.Open();
-                    string query = "INSERT INTO manutencao (descricao_task, aeronave, ATA, part_on, sn_on, part_off, sn_off, data) VALUES (@descricao_task, @aeronave, @ATA, @part_on, @sn_on, @part_off, @sn_off, @data)";
-                    MySqlCommand cmd = new MySqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@descricao_task", taskdesc.Text);
-                    cmd.Parameters.AddWithValue("@aeronave", aeronavetext.Text);
-                    cmd.Parameters.AddWithValue("@ATA", ata_text.Text);
-                    cmd.Parameters.AddWithValue("@part_on", pn_on_text.Text);
-                    cmd.Parameters.AddWithValue("@sn_on", sn_on_text.Text);
-                    cmd.Parameters.AddWithValue("@part_off", pn_off_text.Text);
-                    cmd.Parameters.AddWithValue("@sn_off", sn_off_text.Text);
-                    cmd.Parameters.AddWithValue("@data", date_text.Text);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    pegar_dados_manutencao();
-                    MaterialMessageBox.Show("Task cadastrada com sucesso!");
-                    aeronavetext.Clear();
-                    taskdesc.Clear();
-                    ata_text.Clear();
-                    pn_on_text.Clear();
-                    pn_off_text.Clear();
-                    sn_on_text.Clear();
-                    sn_off_text.Clear();
-                    date_text.Clear();
-                }
-                catch (Exception Ex)
-                {
-                    MaterialMessageBox.Show(Ex.Message);
-                }
-            }
-        }
-
-        private void date_text_KeyPress(object sender, KeyPressEventArgs e)
-        { 
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
+       
     }
 }
