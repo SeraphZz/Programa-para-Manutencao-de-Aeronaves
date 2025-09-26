@@ -77,6 +77,7 @@ namespace programa_de_manutencao_de_aeronaves
             DataTable dt = new DataTable();
             dt.Load(reader);
             dataGridView3.DataSource = dt;
+            dataGridView3.Columns["aeronave"].HeaderText = "Matrícula da Aeronave";
             dataGridView3.Columns["id_task"].HeaderText = "Código da Task";
             dataGridView3.Columns["descricao_task"].HeaderText = "Descrição da Task";
             dataGridView3.Columns["part_on"].HeaderText = "Part On";
@@ -262,5 +263,7 @@ namespace programa_de_manutencao_de_aeronaves
                 e.Handled = true;
             }
         }
+
+     
     }
 }
